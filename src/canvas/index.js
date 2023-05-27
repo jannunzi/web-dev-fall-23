@@ -1,10 +1,13 @@
 import Dashboard from "./dashboard";
+import Home from "./home";
 
 function Canvas() {
   return (
     <div>
       <h1>Canvas</h1>
       <Dashboard />
+      <br></br>
+      <Home/>
     </div>
   );
 }
