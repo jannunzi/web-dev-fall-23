@@ -4,10 +4,11 @@ import Home from "./home";
 function Canvas() {
   return (
     <div>
+      <a name="canvas"></a>
       <h1>Canvas</h1>
       <Dashboard />
       <br></br>
-      <Home/>
+      <Home />
     </div>
   );
 }
