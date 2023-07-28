@@ -1,0 +1,41 @@
+.filter-container {
+    display: flex;
+  }
+  
+  .filter-box {
+    margin-right: 20px;
+  }
+  
+  .custom-select {
+    width: 500px; /* Set the desired width for the search box */
+  }
+
+  .table-container {
+    max-height: 400px; /* Set the desired maximum height for the table container */
+    overflow: auto;
+    max-width: 1020px;
+  }
+  
+  .custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+  
+  .custom-table thead th,
+  .custom-table tbody td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    width: 150px !important; /* Set the desired width for all columns */
+  }
+  
+  
+  /* Apply alternate row colors */
+  .custom-table tbody tr:nth-child(odd) {
+    background-color: white;
+  }
+  
+  .custom-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }

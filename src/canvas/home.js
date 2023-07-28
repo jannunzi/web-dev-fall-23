@@ -1,39 +1,103 @@
-import React from "react";
+import React, {useState} from "react";
+import "./home.css";
+const Home =() => {
 
-function Home() {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const toggleTable = () => {
+    setIsExpanded(!isExpanded);
+  };
+
+  const contents =[
+    {
+      heading: 'Resources',
+      Reading: [
+        'Full Stack Developer - Chapter 3 - Styling User Interfaces With Cascading Style Sheets',
+        'Full Stack Developer - Chapter 4 - The Bootstrap CSS Library'
+      ],
+      Slides: {
+        key1: 'www.google.com',
+        key2: 'value2',
+        key3: 'value3',
+      }
+    },
+    
+    {
+      heading: 'Resources1',
+      Reading: [
+        'Full Stack Developer1 - Chapter 3 - Styling User Interfaces With Cascading Style Sheets',
+        'Full Stack Developer1 - Chapter 4 - The Bootstrap CSS Library'
+  ],
+      Slides: {
+        key1: 'value11',
+        key2: 'value21',
+        key3: 'value31',
+    }
+    }
+
+  ]
+
+  
+ 
   return (
     <div>
       <a name="home"></a>
       <a href="index.html#nav">Nav</a>
       <h1>Home</h1>
       <hr />
-      <table border="1" width="80%">
-        <thead>
-          <tr>Resources</tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style={{ padding: "0px" }}>Syllabus</td>
-          </tr>
-          <tr>
-            <td style={{ padding: "0px" }}>Piazza</td>
-          </tr>
-        </tbody>
+
+      {contents.map((content,index)=>{
+        return(
+          <div>
+          <button className="buttonStyle" onClick={toggleTable}>
+          {isExpanded ? (
+            <>
+              <span>&#x25B2;</span> {content.heading}
+            </>
+          ) : (
+            <>
+              <span>&#x25BC;</span> {content.heading}
+            </>
+          )}
+        </button>
+                 
+        {isExpanded && (
+          <div style={{ overflowX: 'auto' }}>
+            <table>
+              
+                <tr>
+                  <td className="rowHeading">READING</td>
+                </tr>
+                  {content.Reading.map((reading, index) => (
+                    <tr key={index}>
+                    <td key={index}>{reading}</td>
+                    </tr>
+                  ))}
+              
+              <tr>
+                <td className="rowHeading">SLIDES</td>
+              </tr>
+              {Object.entries(content.Slides).map(([key, value]) => (
+                      <tr key={key}>
+                        <td>
+                          <a href={value}>{key}</a>
+                        </td>
+                      </tr>
+                    ))}
+              
+            </table>
+          </div>
+        )}
         <br></br>
-        <thead>
-          <tr>Code Repositories</tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style={{ padding: "0px" }}>Jose Github Username:jannunzi</td>
-          </tr>
-          <tr>
-            <td style={{ padding: "0px" }}>
-              Tuiter App CS5610 FA22 ON Netilify - main
-            </td>
-          </tr>
-        </tbody>
-      </table>
+</div>
+        
+  
+
+
+        );
+      })}
+
+    
     </div>
   );
 }

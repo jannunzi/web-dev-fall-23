@@ -1,0 +1,41 @@
+table {
+    border-collapse: collapse;
+    width: 80%;
+  }
+  
+  table th,
+  table td {
+    border: 1px solid #000000;
+    
+    padding: 8px;
+  }
+
+  .rowHeading{
+    font-weight: bold;
+  }
+  
+  table tr:not(:last-child) {
+    border-bottom: 1px solid #000000;
+  }
+  
+  table tr:first-child {
+    border-top: 1px solid #000000;
+  }
+  
+table tr td:first-child {
+    border-left: 1px solid #000000;
+  }
+  
+  table tr td:last-child {
+    border-right: 1px solid #000000;
+  }
+
+
+.buttonStyle{
+    width : 80%;
+    height :30px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+   
+  }
