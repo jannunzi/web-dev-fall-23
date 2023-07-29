@@ -7,8 +7,8 @@ function Canvas() {
       <a name="canvas"></a>
       <h1>Canvas</h1>
       <Dashboard />
-      <br></br>
-      <Home />
+   
+      
     </div>
   );
 }
