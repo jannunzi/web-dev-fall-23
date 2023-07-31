@@ -5,9 +5,7 @@ function Canvas() {
   return (
     <div>
       <a name="canvas"></a>
-      <h1>Canvas</h1>
       <Dashboard />
-   
       
     </div>
   );

@@ -1,11 +1,11 @@
 .side-nav {
     height: 100%;
-    width: 100px;
+    width: 95px;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #333;
-    padding-top: 20px;
+    background-color: black;
+    padding-top: 10px;
   }
   
   .side-nav ul {
@@ -23,3 +23,40 @@
   .side-nav li:hover {
     background-color: #555;
   }
+
+  .logo {
+    text-align: center; /* Align the logo in the center */
+  }
+  
+  .logo img {
+    width: 70px; /* Set the width of the logo as needed */
+    height: auto; /* Maintain the aspect ratio */
+  }
+
+
+  .icon {
+    width: 100% ; 
+    height: 100%;
+    overflow: hidden;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    margin-right: 10px; 
+  }
+
+  .icon-size{
+    width:30px;
+    height:30px;
+  }
+
+  .icon-text-center{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .icon-color{
+    color:red;
+  }
+  
+  
