@@ -7,9 +7,8 @@ import Nav from "./nav";
 import Piazza from "./canvas/piazza";
 import Quizzes from "./canvas/quizzes";
 import QuizEditor from "./canvas/quiz-editor";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import Sidebar from "./canvas/sidebar/Sidebar";
-
 
 function App() {
   return (
@@ -23,35 +22,37 @@ function App() {
     //   <QuizEditor/>
     //   <Piazza />
     // </div>
-//     <BrowserRouter>
-//     <Routes>
-//         <Route path='/' element={<AppLayout />}>
-         
-//             <Route path='/started'  />
-//             <Route path='/calendar'  />
-//             <Route path='/user'  />
-//             <Route path='/order'  />
-//         </Route>
-//     </Routes>
-// </BrowserRouter>
+    //     <BrowserRouter>
+    //     <Routes>
+    //         <Route path='/' element={<AppLayout />}>
 
-<div className="app">
-<Sidebar />
-<div className="content">
-<BrowserRouter>
-     <Routes>
-         <Route path='/' element={<Canvas />}>
-         
-             <Route path='/started'  />
-             <Route path='/calendar'  />
-             <Route path='/user'  />
-             <Route path='/order'  />
-         </Route>
-     </Routes>
- </BrowserRouter>
-  {/* Your main content goes here */}
-</div>
-</div>
+    //             <Route path='/started'  />
+    //             <Route path='/calendar'  />
+    //             <Route path='/user'  />
+    //             <Route path='/order'  />
+    //         </Route>
+    //     </Routes>
+    // </BrowserRouter>
+
+    <div className="app">
+      <Sidebar />
+      <div className="content">
+        <HashRouter>
+          <Routes>
+            <Route path="/" element={<Canvas />}></Route>
+            <Route path="/started" />
+            <Route path="/calendar" />
+            <Route path="/user" />
+            <Route path="/order" />
+            <Route path="grades" element={<Grades />} />
+            <Route path="piazza" element={<Piazza />} />
+            <Route path="quizzes" element={<Quizzes />} />
+            <Route path="quiz-editor" element={<QuizEditor />} />
+          </Routes>
+        </HashRouter>
+        {/* Your main content goes here */}
+      </div>
+    </div>
   );
 }
 

@@ -1,13 +1,15 @@
+import { Provider } from "react-redux";
 import Dashboard from "./dashboard";
-import Home from "./home";
+import { store } from "./state/store";
 
 function Canvas() {
   return (
-    <div>
-      <a name="canvas"></a>
-      <Dashboard />
-      
-    </div>
+    <Provider store={store}>
+      <div>
+        <a name="canvas"></a>
+        <Dashboard />
+      </div>
+    </Provider>
   );
 }
 
